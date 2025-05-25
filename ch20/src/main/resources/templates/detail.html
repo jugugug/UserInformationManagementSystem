@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base th:href="@{/}">
+    <meta charset="UTF-8">
+    <title>名片详情</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+<div th:include="header"></div>
+<br><br><br>
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">名片详情</h3>
+    </div>
+    <div class="panel-body">
+      <div class="table table-responsive">
+        <table class="table table-bordered table-hover">
+          <tbody class="text-center">
+          <tr>
+            <th>姓名</th>
+            <td th:text="${card.name}"></td>
+          </tr>
+          <tr>
+            <th>电话</th>
+            <td th:text="${card.telephone}"></td>
+          </tr>
+          <tr>
+            <th>E-Mail</th>
+            <td th:text="${card.email}"></td>
+          </tr>
+          <tr>
+            <th>单位</th>
+            <td th:text="${card.company}"></td>
+          </tr>
+          <tr>
+            <th>职位</th>
+            <td th:text="${card.post}"></td>
+          </tr>
+          <tr>
+            <th>地址</th>
+            <td th:text="${card.address}"></td>
+          </tr>
+          <tr>
+            <th>照片</th>
+            <td>
+              <img th:src="'images/'+${card.logoName}"
+                   style="height: 50px; width: 50px; display: block;">
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
